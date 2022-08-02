@@ -1,0 +1,68 @@
+ETL/ELT TESTING:
+-trasformations mapping
+-table relationships
+-source-target testing
+
+DATABASE TESTING:
+-schema
+-table
+-attribute
+
+
+DATA QUALITY COMPONENETS:
+-Data profiling (metadata)
+-Data quality analysis
+    -validation
+-Data cleasing
+    -Matching
+    -Eliminate errors, duplicates, inconsistencies
+-Data quality monitoring
+    -Reporying and monitoring
+
+
+Data profiling
++Metadata Discovery
+   -datatypes, length, precision, nullable
+   -keywords
+   -tags
+   -relationships(Primary Key, Foreign Key)
++Descriptive methods
+   -count
+   -mean, max, min, distribution
++Validation levels
+   -scheme, entity, attributes
+
+
+DATA COMPLETENESS 
+in this we check is there in null values are there .
+
+DATA UNIQUENESS:
+evvery data should be unique.
+
+DATA VALIDITY:
+
+Data PROFILING:
+
+Metadat validations (count,datatype,length,precision,nullable)
+
+*WHAT ARE DATABASE VIEWS?
+database can contain several schemas, and within each database schema
+can have different objects.
+
+database tables which actually store data within a certain table.
+which can have database reviews which don't store the data, but actually 
+are stored queries that fetch data when you execute the view.
+
+DATA QUALITY:
+-data profiling
+-data quality uniqueness
+-data quality completeness
+-data quality validity
+-data quality consistency
+-data quality integrity
+
+DATA QUALITY CONSISTENCY:
+
+
+
+

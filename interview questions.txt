@@ -1,0 +1,55 @@
+questions:
+
+1) how prepare test result:
+by taking screenshotn and validate if data is mismatch then we raise error
+
+2) oracle to another databse then how to prepare result?
+we take secreenshot from different database and we prepare the result.
+
+3) RANK and DENSE_RANK?
+explain with example.
+
+4) What is star schema?
+
+5) what is actice_flag?
+
+6) which type of review you do?
+
+7) tracebility matrix?
+
+8) what type validation you perform in ETL?
+
+9) duplicate records queires?
+
+10) how you do type 1 and type record validation?
+
+11) what is normalizations?
+
+12) what is star shema?
+
+13) what is mean by type 1 and type 2?
+
+14) RANK AND DENSE_RANK AND ROW_NUMBER?
+
+15) how to display half records?
+
+16) how putty terminate looks?
+
+17) where you use python in your project?
+
+18) diff bet v model and waterfall model?
+
+19) agiles meeting?
+
+20) sprint flow?
+
+21) durations of sprint?
+2 weeks 10 working days.
+
+22) diff etl validation?
+
+23) diff challenges face in etl?
+
+24) how to check the department wise salary?
+
+

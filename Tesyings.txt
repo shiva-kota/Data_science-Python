@@ -1,0 +1,325 @@
+Static testing and verification testing:
+
+BA review his own SRS document, designer review his own design, 
+developer review his own code this is called static and verification testing.
+
+
+Dynamic and validation testing:
+
+in dynamic and validation system and function test, because respective any stage 
+whereever issue mighet be we responsible to guess defect  we are testig the function 
+of system. thats why that is called as dynamic and validation tesing.
+
+
+White box testing / clear/ Glass/ Transperent:
+
+white box testing follow the 2 dimension approach and it is done by developer
+because developer know the internal part of the structure thats why its called as 
+transparent/ glass/ clear/ WB tesing.
+
+
+Black box testing:
+
+black box testing follow 3 dimensional approach and it is done by tester with 
+the of bussiness logic.  during BBT we concetrate on functionality of the system
+i mean to say during BBT we check functinality of the system with respect to customer 
+requirement.
+
+we validate internal functionality of the application depend on external interface
+
+
+Grey box tetsing:
+
+GBT is BB tester having knowlwdege of the internal structure of the coding that is
+called as grey box testing.
+
+
+REd box testing: ( we are the red box tester)
+
+telecom architecture, a black box tester deals with telecom architecture is called
+as red box testing.
+
+release testing:
+before the builsd goes to the production the check functionality of the critical area
+is called as release testing.
+
+Recovery/ Realibility testing:
+recovery nothing but realibility testing during recovery testing we validate recover 
+rcover of the application from the abonormal situation to normal situation.
+
+
+Compatibility testing:
+this testing known as portability test.
+during test we check compatibility of software with customer expected environment . 
+
+divided into 2 parts:
+1) forward compatibility:
+application is ok but same issue in platform that is called as forward compatibility.
+
+2) backward compatibility:
+application is not ok but environment is ok that is called as backward co,patibility.
+
+
+Configuration test:
+in this test we check that our appliction or system support the hardware devices or not.
+
+
+Intersystem testing:
+generally co-existance of the our application along with the other existance software. to share
+info and resources along with the associated software is called as intersystem testing.
+
+this testing is backend testing. in this test we implement the bussiness logics.
+
+
+
+Installation testing: 
+we are not involve in installtion testing. installation testing perform in the customer
+expected environment.
+
+
+
+sanitation testing:
+garbage testing, we involve.
+during this test we find out thee extar features is present in the application, that is 
+called as santition testing.
+main objective of the this testing is making revenue.
+
+
+
+Parallel testing:
+parallel testing is only done by product base industry.
+
+
+
+Globalisation / locallisation/ internationalisation testing:
+it is also known as language compatibility testing.
+during this test we concetrate on whether on application support multi language character.
+
+
+
+Prformance tseting:
+is the advance and critical by nature.
+
+1) frontend testing
+2) backend testing
+3) no of user tesing.
+    1) load testing:
+                    during this test we validate the execution of the appication in customer
+                    expected load and customer expected configuration to estimate the performance
+                    is called as load testing.
+                    
+    2) stress testing:
+                      during this test we validate execution of the application in customer expected load 
+                      and customer expected cinfiguration and pick the max load to estimate the performance.
+                      main objective of this testing to know that BEP/ thresh point.
+                   
+    3) Endurance testing:
+                        endurance testing defines how much time the application bear the load.
+                        i mean to say during we analyse memory concumption. to determine the potential values.
+    4) storage testing: 
+                       we analyze 1) we analyze the data is storing in approprite directory.
+                       2) disk space. wheather where has enough space to prevent unaccepted termination. due 
+                       to unsaficient dispatch.
+                       means we have to check availability of dispatch to ensure enough space is having available
+                       else application will dehave unaccepected termination.
+     5) Data volume testing :
+                           data volume tedsitng also known as flood tsting .
+                            during this testing we analyse the system performance by increasing volume of database.
+                            during the data volume testing we analyse the system performance and behaviour of the application
+                             by increasing the volume of the data.
+                       
+
+
+UAT/ CAT (user accepatance testing, customer acceptance testing):
+2 part:
+1) Alpha test:  this applicable for application
+2) beta testing:  this applicable for product.
+                 
+
+
+Exploratory testing:
+level by level of functionality coverage is called as exploratory testing.
+when we not aware about the application or system then we implement the 
+exploratory testing.
+
+
+Adhoc tetsing:
+adhoc testing if we dont have sufficicent data , in this case with ythe help of the past experience we 
+we will perform the test this is called as adhoc testing.
+
+
+Sanity testing / level 0 / health check-up/ initial level / build varification / octangle / tester acceptance test:
+
+during this test we check varify stability of the build. mean the build is for test or not.
+generally we concetrate on the basic or core functionality of the application, once we receive the initial build.
+ 
+
+Smoke testing:
+smoke testing= sanity + troubleshoot
+smoke testing is define as extra check-up of the sanity testing.
+i mean to say during the smoke testing we need to find the where is exact issue is we need trouble shot
+ the on build to find out where the problem is.
+generally during the somke testing we check on package validation.
+
+Big bang testing / inspection/ one-shot/ informal:
+during this testing we perform the test from start to end on the major functionality just before build goes to production.
+i mean to say during the big bang testing we concetrate on the single story instead of the multiple stages after complition 
+of the entire software building.
+
+
+formal testing:
+formal testing known as incremental testing.
+during this test we peform the functionality of unit level to system is called as formal testing.
+
+
+Re-testing testing / repeated testing:
+Re-execution of application on same build the set of multiple text data combination.
+i mean to say we implement the data intelligence.  that is nothing but implementing the multi dimesional data approach that is nothing 
+but implement data intelligence with 3 dimensional approach. 
+
+
+Regression testing:
+every re-test is regression test but regerssion test is no retest.
+re-execution of an application on modified build to check bug fix work and occurance of the side effects.
+i mean to say once we recive the initial build we execute the system.
+if we find the any defect, if we identify the any defect the we send to the develoeper to resolve the defect.
+once we receive the modified buildwe implement the regression tetsing to ennsure that existing defect resolve or not 
+or any any side effect is there.
+
+
+
+
+TEST CASE DESIGN:
+
+A good test case design technique is crucial to improving the quality of the
+software testing process.  This helps to improve the overall quality and
+effectiveness of the released software.
+
+Test case design refers to how you set-up your test cases. 
+It is important that your tests are designed well, or you could
+fail to identify bugs and defects in your software during testing.
+
+There are many different test case design techniques used to test the
+functionality and various features of your software. Designing good
+test cases ensure that every aspect of your software gets tested so 
+that you can find and fix any issues.
+
+A basic example of test case design:
+Title: Login to the website or app
+Description: User should be able to successfully log in to their account on the website/app
+Preconditions: User must already be registered and use their correct login details
+Assumptions: They are using a supported device or browser to log in
+Test Steps:
+
+Open website or app
+Enter the username and password in the appropriate fields
+Click “login”
+Expected Result: The user should log in successfully.
+
+TYPES OF TEST DESIGN:
+
+Specification-Based techniques
+Structure-Based techniques
+Experience-Based techniques
+
+Specification-Based or Black-Box Testing:
+
+This technique leverages the external description of the software such as 
+technical specifications, design, and client’s requirements to design test 
+cases. The technique enables testers to develop test cases that provide full 
+test coverage. The Specification-based or black box test case design 
+techniques are divided further into 5 categories. These categories
+are as follows:
+
+Boundary Value Analysis (BVA)
+This technique is applied to explore errors at the boundary of the input domain. 
+BVA catches any input errors that might interrupt with the proper functioning of 
+the program.
+
+Equivalence Partitioning (EP)
+In Equivalence Partitioning, the test input data is partitioned into a number 
+of classes having an equivalent number of data. The test cases are then designed
+for each class or partition.  This helps to reduce the number of test cases.
+
+Decision Table Testing
+In this technique, test cases are designed on the basis of the decision tables
+that are formulated using different combinations of inputs and their
+corresponding outputs based on various conditions and scenarios adhering to 
+different business rules.
+
+State Transition Diagrams
+In this technique, the software under test is perceived as a system having a 
+finite number of states of different types. The transition from one state to 
+another is guided by a set of rules. The rules define the response to different
+inputs. This technique can be implemented on the systems which have certain
+workflows within them.
+
+Use Case Testing
+A use case is a description of a particular use of the software by a user.
+In this technique, the test cases are designed to execute different business
+scenarios and end-user functionalities.  Use case testing helps to identify 
+test cases that cover the entire system.
+
+Test Case Design Techniques using test case software
+2. Structure-Based or White-Box techniques
+The structure-based or white-box technique design test cases based on the 
+internal structure of the software.  This technique exhaustively tests the 
+developed code. Developers who have complete information of the software code, 
+its internal structure, and design help to design the test cases. This technique 
+is further divided into five categories.
+
+Statement Testing & Coverage
+This technique involves execution of all the executable statements in the 
+source code at least once.  The percentage of the executable statements is 
+calculated as per the given requirement. This is the least preferred metric
+for checking test coverage.
+
+Decision Testing Coverage
+This technique is also known as branch coverage is a testing method in which each 
+one of the possible branches from each decision point is executed at least once to
+ensure all reachable code is executed.  This helps to validate all the branches in 
+the code. This helps to ensure that no branch leads to unexpected behavior of the
+application.
+
+Condition Testing
+Condition testing also is known as Predicate coverage testing, each Boolean expression 
+is predicted as TRUE or FALSE.  All the testing outcomes are at least tested once. 
+This type of testing involves 100% coverage of the code.  The test cases are designed 
+as such that the condition outcomes are easily executed.
+
+Multiple Condition Testing
+The purpose of Multiple condition testing is to test the different combination of 
+conditions to get 100% coverage.  To ensure complete coverage, two or more test 
+scripts are required which requires more efforts.
+
+All Path Testing
+In this technique, the source code of a program is leveraged to find every 
+executable path. This helps to determine all the faults within a particular code.
+
+3. Experience-Based techniques
+These techniques are highly dependent on tester’s experience to understand the most
+important areas of the software.  The outcomes of these techniques are based on the
+skills, knowledge, and expertise of the people involved. The types of experience-based
+techniques are as follows:
+
+Error Guessing
+In this technique, the testers anticipate errors based on their experience, 
+availability of data and their knowledge of product failure.  Error guessing
+is dependent on the skills, intuition, and experience of the testers.
+
+Exploratory Testing
+This technique is used to test the application without any formal documentation.  
+There is minimum time available for testing and maximum for test execution.  
+In exploratory testing, the test design and test execution are performed 
+concurrently.
+
+Test Case Software for managing Test Cases
+A test case software can help in writing better test cases and managing them. 
+It also enables you to report bugs from any failed step. A tool provides robust 
+reports generated through built-in filters which also gives you actionable insights. 
+
+ReQtest is a test case software preferred by Test Managers in 20+ countries across the globe. 
+
+Conclusion
+The successful application of test case design techniques will render test cases that
+ ensure the success of software testing.

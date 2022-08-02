@@ -1,0 +1,936 @@
+HDFS COMMANDS:
+
+"hdfs dfs -"  we have use before every command use
+
+jps --> print hadddop processes
+fsck --> check the health of HDFS
+ls / --> root directories
+ls --> show the file, directories
+Mkdir --> create directory
+touchz --> create files on HDFS with size 0 bytes
+du -s  --> size of the file(path of the file througth the directory)
+cat --> dispaly show content of the data in present
+
+cpying files from local file system to HDFS
+--------------------------------------------------
+copyfromlocal (put) copy file from local paste in to hadoop system
+copytolocal (get) copy file from haddop to local system
+(we have to give path)
+
+cp --> copy paste the file
+mv --> move
+rm --> remove file 
+rm -r --> remove non-empty directoies
+rmdir --> remove the directories
+
+usage --> provide you help for individual command
+help --> help for all hdfs command
+
+Hadoop is framework or techology which can handle the bigdata.
+big data data where is beyond the storage and beyond the process  is called as big data
+
+Apache fundation:
+hadoop is java based framwork used for storing and processing big data.
+hadoop is open source
+hadoop is used commodity h/w and cluster concept
+
+cluster concept:
+big data comes to the picture data goes to the masternode and masternodes send this data into
+multiple slave nodes this called as cluster
+one cluster can have many masternode and slavenode
+
+hadoop 2 concept
+hdfs --> storage
+mapreduce -- > processing the data
+
+test process:
+-------------
+requirement(stories/epic)
+datamodel,source,target transformation, tools,costome requirement,we have to testing.
+
+1)estimation: management to give
+2)test palnning(load mangement level people in test palnning)
+3)test scenario's/test case
+   -document: requirement document
+              data models
+              mapping document
+              design document (all are input document)
+4)Review on test cases and get the sign-off
+5)test execution(developer from required)
+       ->mapreduce job - jarfiles
+       ->HDFS files - load data in HDFS
+       ->Hive script - validate data need hive script
+       ->Hive UDF'S
+       ->Pig script/UDF'S           |(all are prerequisites from developers)
+6)Defect reporting & tracking (source to target)
+7)test reports(daily basis/weekly basis)
+8)sign-off
+
+
+LEVEL OF TESTING:
+-----------------
+1) Unit testing : testing units/components/programs. developer conduct unit testing white box testing technique
+
+2) Integration Testing :  integrated modules/program. developer/whitebox
+
+3) System Testing : testing entire system as module/system
+                    tester conduct system testing
+                     -> functional
+                     -> non-functional
+                     -> security testing
+                     -> performance testing
+
+4) UAT: user acceptance testing, production environment,user/customer/stake holder do this testing.
+
+Test Scenario:
+TCID
+test case type
+title
+pre-requisities
+step/conditions/commands
+expected
+actual
+status
+
+Validation:
+
+1) HDFS user prevelages:
+                          In HDFS some files are ready for user but we have to check the permission of that file.
+                          we have validate the permission of the files is excat same as document showing.
+
+2) Mapresuce Job :
+                   In reallife there are n-number of mapreduces will be there.
+                   It is jar file that content the mapper,shuffler,reducer scripts.
+                   we have to check this jar files in local enivornment to check whether this jar file working fine or not and output is as expected or not.
+                   developer send as read me  instruction file and the file which we have to check and mapreduce will run.
+
+3) Data ingestion(using sqoop) :
+                                All data from relational database import to the hive we have to execute the commands
+
+4) ETL / Data validation :
+                            check records present in source, target after data load, in the target table, duplicate records.
+                    
+
+
+we are completely focus on functional testing:
+
+1) big data source extract testing
+2) data migration testing
+3) big data ecosystem testing
+
+this is testing tester perform
+
+test paln: focus on what to test, how to test, when to test
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+
+HIVE:
+hive used for processing the data, and it is process the only structured data.
+
+
+SPARK:
+spark is popular for the processing large set of the data.
+spark is alternative to the mapreduce.
+parallel processing and storing the data in HDFS.
+yarn run the spark jobs in hadoop clusters
+spark has its own cluster managers.
+it is use mesos cluster mangers to work on hadoop platform.
+spark process large sata set computation in distributed manner.
+spark work with hadoop also work relational database, aws s3 ,azure, nosql database etc.
+spark is an open source technology under apache founcation. it is a unified analytics engine for large-scale data processing.
+spark is written in scala. 
+All spark program work manage by driver program which run on the master node.
+in multi node cluster environment driver run on master node and its create several worker or data nodes.
+do spark programming in dataproc we have to enter into repl interface pyspark or scala.
+type (pyspark) on terminal, it will take to the spark repl
+spark.read.csv("file path and name").show()(it shows the data)
+spark.read.option("header",True).csv("file path and name").show()(it shows the data remove header)
+pyspark shell with repl interface(read,evaluate,read and loop "REPL")
+we can create hive table on HDFS DATA and read the hive table using spark.
+we can perform the python spark on goggle colab.
+
+
+Yarn :
+yarn started to give hadoop the ability to run non-mapreduce jobs (such as spark) within the
+hadoop farmework. YARN(yet another resource negotiator) to idea behind is relieve the mapreduce.
+
+
+DATAFRAME:
+
+dataframes are main frames where we get data from different source and put it on spark make transformation.
+create spark dataframe using sparksession.
+spark datafrme is like an in-memory excel. it holds the data in row and column format and provides various 
+methods to analyze and apply transformation on the data.
+
+RDD(Rsilient Distributed Datasets) is the fundamental building of spark.
+rdd are stored in a distributed manner across the cluster of computers.
+RDD"s are immutable.
+can apply transformation and create a new RDD.
+Is a collection of elements partitioned across the nodes of the cluster that can be opearated on in parallel.
+to create RDD we need spark context not spark session.
+transformation: produces new RDD from an existing RDD
+action : returns the final result of RDD computation - collect,count,take)
+
+
+we use google colab to do python spark.
+get a dowload link of (spark.apache.org) for spark
+paste and run it. 
+
+
+SPARKSQL:
+sparksql is a library buile on spark core and spark RDD that supports SQL like opeartions.
+its support sql like operation
+sparksql works throught a sparksession.
+it provides a standard interface to work across different dara sources.
+spark use for large scale transformation
+
+BIG DATA:
+big data is about storing, processing huge volume of dta with the ultimate end goal of generating insights from the data.
+data can be processed real time or in batches dependong on the solution requirements.
+traditional database system like relational database are not designed to store process and analyze huge volume of data.
+while disging the big data we need to keep 5v's of big data.
+
+volume : size
+variety : sturcturd etc.
+veracity : accuracy
+value : worth
+velocity: speed
+
+big data is distributed storage system.
+process huge volume of data in parallel 
+
+big data solution two key concepts
+distributed storage
+distributed computing
+
+haddop is opensource framework for distributed storage and distributed computing.
+apache haddop is designed to scale uo from single server to thousand machine , computing and storage.
+
+HIVE PARTITION:
+set hive.exec.dynamic.partition=true;
+set hive.exec.dynamic.partition.mode=-nonstrict;
+
+to set partion on table we set the patition mode in hive after that we can perform the partition.
+we have to create external partition table to save the partition records.
+
+we have to specify by prtioned by the column on which we want after that partion
+after that if we check then partion we done and records are divided by by the column and
+store in different files.
+
+partition done the column. coulmns records are divided by maximum macthes and that will partitioned.
+by partitioning its improve the query performance.
+
+HIVE BUCKETING:
+
+its speed up the queries in hive.
+we have to create new external table
+
+create exteranal table reatailcustext_large bucketed (customerid INT, age INT, salary FLOAT, gender String, country String)
+clustered by (customerid) into 2 buckets location '/user/kotawarshivani014/retailcust-bucketed/';
+
+its create the table and records stor in the 2 diffrent buckets
+
+we can check the records in hdfs. recosrd would be buckected by.
+
+from retailcustext_large insert into table retailcustext_large_bucketed
+select customerid,age,salary,gender,country;
+ if we run this query then records would be bucketd in different buckets.
+
+we can verify in hdfs files are created in hdfs folder.
+
+in partition we create different directories and the bucketing we create diffrent files.
+
+partition done in column wise unique value differentiate partition is limited.
+bucketing done on columns in continues value like coustomer id.
+
+ADVANCE SPARK DATASETS:
+
+UDF(user define function):
+some of operation we trying cannot perform are not available in built-in fucntion
+you can define our own udf function.
+
+from pyspark.sql.functions import udf (for creating udf)
+exa: extract_year = udf (lambda date:date.split('-')[2]) ( this function will split the year from date field)
+taransactionDF = transactionDF.withColumn("year",extarct_year(transactionDF.Date))
+(above line will estarct year from the from date andd for that we will use the UDF mention aerlier udf and add year in new column)
+transcaationDf.show ( it show the records
+
+we can perform the joins 
+customerDF = table
+transactionDF = table
+
+country_spend_details = customerDF.join(transactionDF,customerDF.CustomerID == transactionDF.CustomerID)
+(it will perofrm the join and variable wiil store the value after performing the join)
+this varibale we can see the value after perform the join.
+
+country_spend_details.groupby("Counrty").agg({"Amount" : "sum"}).show()
+(it show the sum of the value country by )
+
+customerDFmini = spark.read.csv("store_customer_mini.csv",header=True)
+(it will read the file and header will be column names)
+customerDFmini.show (shows the value from the variables.
+
+customerDFmini = spark.read.csv("store_customer_mini.csv",header=True, how="left").show()
+(it will be the join left on the table)
+
+customerDFmini = spark.read.csv("store_customer_mini.csv",header=True, how="right").show()
+(it will be the join right on the table)
+
+customerDFmini = spark.read.csv("store_customer_mini.csv",header=True, how="full").show()
+(it will be full outer join on the table)
+
+customerDFmini = spark.read.csv("store_customer_mini.csv",header=True, how="left_semi").show()
+(it will be shown left table data not from the right table)
+
+customerDFmini = spark.read.csv("store_customer_mini.csv",header=True, how="right_semi").show()
+(it will be shown right table data not from the left table)
+
+customerDFmini = spark.read.csv("store_customer_mini.csv",header=True, how="left_anti").show()
+(it will show the row in lef dataframe that are not present in right dataframe)
+
+------------------------------------------------------------------------------------------------------------------------------------
+BIG DATA :
+
+HDFS:
+hadoop distributed file system this is basically the uderpinning the hadoop actually allows
+you big data to be stored across an entire cluster in distributed manner.
+and relaiable manne and allows your application to analyze that data to across that data quickly
+and reliably.
+
+what HDFS do?
+well its really made for handling large files. samll files but really its optimized
+for handling very large files that can be distributed and broken up across an entire cluster.
+if we are dealing with eteh big data you know these might be big logs of information from senesors or 
+web servers or what have you.
+
+by break into blocks those block are actually pertty large its 128 mb by default so you know we're
+talking about big files here.
+
+but by splitting up these large files into blocks we're not limited by the drive limitations of a single.
+we can split the larg3e files into severaldifferent computers taht means different computer
+can access different parts of that data and process it in parallel and we can also do things like making.
+sure that the computer s that are processing is given chunk of data give block of that are physically
+close to where that block is stored. so it can access it more efficiently.
+
+nlocks can be stored across several commodity computers and it doesn't just store 
+one copy of each block. in order to hadle failure.
+it will actually store more than one copy of each block and so that way if one of these
+individual computers goes down HDFS can deal with that and actually start retriving information from a 
+different computer
+
+HDFS architecture:
+let's say about how HDFS architecture works and a little bit more depth here so the way it works 
+is there name node = master node and this name node is what keeps track of where all those blocks live.
+so basically its maintaining a big data table of a given file name under some you know directory structure.
+a virtaul directory struvture in hdfs and it knows where to go to actually find every copy of every
+block that associated with that file.
+name node is hat keeps track of what on all the data nodes and individual data nodes are
+ultimately what your client application will be talking to.
+datanode whatt actually store each block of each file.
+actually they talk with each other as well to maintain those copies and replication of those blocks.
+
+name node :
+back-up metadata  : name node writes to local disk and NFS
+secondary namenode: maniatains merged copy of edit log you can restore from.
+HDFS federation : each namenode manages a specific namspace volume
+HDFS high availability : hot standby namenode using shared edit log
+                         zookeeper tracks active namenode
+                         uses extreme measures to ensure only one namenode
+                                                   is used at a time.
+using HDFS : UI(ambari) , command-line Interface, HTTP/HDFS Proxies, java interface, NFS gateway.
+
+MAPREDUCE :
+its is core concept of the HDFS
+Map reduce the processing of data on your cluster 
+
+divides your data up into partitions that are MAPPED (transformed) and REDUCED
+(aggregated) by mapper and reducer functions you define.
+
+resilient to failure- an application master monitors your mappers and reducers
+on each partition.
+
+HOW MapReduce Works: Mapping
+The MAPPER convert raw source data into key/value pairs.
+
+input data --> mapper --> k1:v (key value pairs)
+
+mapreduce do shuffle and sort and this is where it actually aggregates together
+all the given value for each unique key for you.
+it sort those keys which might be handy in some search situations.
+shuffle sort stages taht takes a looks at all of these unique all these individual 
+key value pairs and it aggregates together all the value seen for each unique key.
+
+MapReduce is aggregates all value toghether across the entire cluster and put them 
+together in one spot where you can process them together.
+
+reducer processes each key's values.
+
+input data --> mapper --> shuffle and sort --> reducer
+
+The mapping stage can be split up across different computers whee each computer 
+receive a different chunk of data.
+and shuffler and sort operation you can have different computers resposible for
+different sets of keys while reducing them.
+
+HOW ARE MAPPERS AND REDUCERS WRITTEN?
+mapreduce is natively Java.
+STREAMING allows interfacing to other language (ie Python)
+
+HANDLING FAILURE:
+
+Application master monitors workers tasks for errors or hanging
+   -restart as needed
+   -preferably on a different node
+
+what if the application master goes down?
+   -YARN can try to restart it
+
+What if an entire nodes goes down
+   -This could be the application master
+   -This resource manager will try to restart it
+
+What is the resource manager goes down?
+   -can set up "high availability" (HA) using Zookeeper to have a hot standby.
+
+SPARK:
+
+A fast and general engine for large-scale data processing.
+(it gives you a lot of flexibility where you can actully write real script using real programming.
+like scala, java, python to do complex manipulation and transfiormation and analysis)
+(spark lets do all sorts of complicated things like machine learning and data mining and graph
+analysis and streaming data that we'll talk about more so it's very powerfull
+framework and a very fast one too and it's scalable)
+
+      |---------------------------------------------------|
+      |                                                   |
+driver program --------> cluster manager-------------->executor
+(spark context)          (spark, YARN)                 (cache,tasks)
+      |                       |
+      |                       |-----------------------> executor
+      |                       |                         (cache,tasks)
+      |                       |------------------------> executor
+      |                       |                         (cache, tasks)
+      |                                                    ^
+      |                                                    |
+      |----------------------------------------------------- 
+
+spark is memory based solution so its tries to retain as much as it can in RAM as it 
+goes and that's one of the keys to it's speed.
+
+key to speed is, its use of directed acyclic graphs which we'll talk about mometarily.
+
+IT'S FAST:
+ 
+Run programs up to 100x faster than hadoop MapReduce in memory, or 10X faster on disk.
+DAG engine (directed acychlic graph) sptimizes workflows.
+
+code in Pyhton, java, or Scala
+Built around one main concept: the resilient distributed dataset(RDD)
+
+COMPONENTS of Spark:
+
+spark            spark       Mllib       GraphX       (This are the spark libararies)
+streaming        SQL                                  this packages are build on the
+                                                            spark
+               SPARK CORE
+
+Instead of doing the batch processing of data you can actually input data in real time.
+if sql is femiliar, then we can wirte the SQL query's against data using Spark SQL.
+MLLib : entire libarary of machine learing and data mining tools that you can run on a 
+        data set that's in spark.
+
+WHY Pyhton?
+- its a lot simpler, and this is just an overview.
+- don't need to compile anything. deal with JAR's, dependencies, etc
+
+BUT..
+
+-Spark  itself is written in scala.
+-Scala's functional programming model is a good fit for distributed processing
+-Gives you fast performance (Scala compiles to Java bytecode)
+-Less code & boilerplate stuff than Java
+-Pyhton is slow in comparison.
+
+RDD (Resilient distributed dataset)
+
+saprk context:
+created by your driver program
+is responsible for making RDD's resilient and distributed!
+creates RDD's
+the spark shell creates a 'sc' object for you.
+
+MAP example:
+
+rdd =sc.parallelize([1,2,3,4])
+squareRDD =rdd.map(lambda x: x*x)
+
+this yield 1,4,9,16
+
+
+RDD actions
+
+-collect
+-count
+-countByValue
+-take
+-top
+-reduce
+-.. and more ..
+
+from pyspark import SparkConf, SparkContext
+
+WORKING WITH STRUCTURED DATA:
+
+Extends RDD to a "DataFrame" object
+
+Dataframes:
+      -contain row objects
+      -can run sql queries
+      -has a schema (leading to more efficient storage)
+      -read and write to JSON, Hive, parquet
+      -communicates with JDBC/ODBC, Tableau
+
+USING SparkSQL in Python
+
+from pyspark.sql import SQLContext, Row
+hiveContext = HiveContext(sc)
+inputData = spark.read.json(datafile)
+inputData.createOrRepalceTempView("myStructuredStuff")
+myResultDataFrame = hiveContext.sql("""select foo from bar order by foobar""")
+
+
+DATASET:
+In spark 2.0, a daraframe is really a dataset of row ob jects.
+datasets can wrap known, typed data too. But this is mostly transparent to you 
+in Python, since Python is dynamically typed.
+ 
+USER DEFINE FUNCTIONS(UDF's):
+from pyspark.sql.types importType
+hiveCtx.registerFunction("square",lambda x:x*x. integerType())
+df =hiveCtx.sql("SELECTsquare('some("someNumericFilled') FROM tablename)
+
+HIVE:
+Its very powerfull and very simple way of querying data across your Hadoop.
+
+         Hive
+    Mapreduce | Tez
+     Hadoop YARN
+
+well hive lets you write standard SQL queries that look just like you'ed using them on MySQL.
+or something, but actually execute them on data that's stored across your entire
+cluster, maybe on an HDFS. it is actually translating your SQL into MapReduce commands
+or Tez commands. depending on. And that just run on top of the Hadoop YARN cluster manger
+to actually execute your stuff. So basically , itll break down the SQL queries into 
+mappers and reducers and figures out how to tie them toghether and actually execute
+them across a cluster automatically.
+
+this looks like querying a SQL database, just like using any other data
+warehouse, so it's really, really poerful stuff, if your already familiar with SQL
+or you're coming from a database or data warehouse world.
+
+
+Use Familiar SQL syntax(HiveQL)
+interactive
+Scalable - works with "Big data" on a cluster
+ - Really most appropreates for data warehouse applications
+Easy OLAP queries -WAY easier than writing Mapreduces in Java
+highly optimized
+highly extensible
+ - User defined functions
+ - Thrift server
+ - JDBC / ODBC driver
+
+
+NOT HIVE:
+high latency - not appropriate for OLTP
+stores data de-normalized
+SQL is limited in what it can do
+  - Pig,Spark allows more complex stuff
+No transactions
+No record-level updates, inserts, deletes
+
+
+HiveQL:
+
+pretty much MySQL with some extensions
+For examples: views
+  - can store results of a query into a "view", which subsequent queries can 
+    use as a table
+allows you to specify how structurec data is stored and partitioned.
+
+SCHEMA ON READ:
+Hive store "metastore" that impacts a tructure you define on the unstructured data 
+that is stored on HDFS etc.
+
+Mnaged vs External tables
+
+external tables really just means that hive doesn't take ownership of it.
+
+PARTITIONING:
+You can see your data in partitioned subdirectories
+ - huge optimization if your queries are only on certain partitions
+
+
+SQOOP:
+Actually kicks off MapReduce jobs to hadle importing or exporting your data!
+Sqoop move data from the any relational databases to straight in the hive
+
+we can keep our relational databse and hadoop in sync
+--check-column and --last-value
+
+export data from Hive to MySQL
+target table must already exist in MySQL, with columns in expected order
+
+NOSQL:
+NoSQL or alterantives to relational database management system.
+
+Do you really need SQL?
+
+-Your high-transaction queries are probably pretty simple once de-normalized.
+-Asimple get / put API may meet your needs.
+-Looking up values for a given key is simple, fast, and scalable.
+-You can do both...
+
+HBASE:
+Hbase is built on top of HDFS. So if you're storing massive datasets on an HDFS file sysrtem,
+Hbase can be used to actually vend taht to the outside world at at very large scale.
+
+Non-relational, scalable database built on HDFS.
+just like every other NoSQL solution, it does not have query laguage but it does have API that
+can very quickly answer the question  
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+APACHE SPARK:
+is one of the most popular technologies to do large scale data processing.
+one of the most core concept is of big data that we have looked at it  noe is distributed
+storage and distributed computing
+
+mapreduce store the intermideate result to disc, and spark improved on the parallel
+processing by storing intermediate result in memory, spark can also write to disk if,
+it runs out of memory.
+
+with spark we can do alrge scale processing at a mush faster pace, spark can do,
+not just batch processing it also handle real time streaming data.
+
+YARN started to give hadoop the ability to run non-mapreduce jobs(such as Spark)
+within the hadoop framework.
+
+non-mapreduce jobs to work with HDFS data. Spark soon became a great alternative to mapreduce.
+do parallel processinf and distributed data stored in HDFS.
+
+instead of mapper and reducers, you would write spark computation tasks.
+yarn would run those spark tasks and jobs on the hadoop cluster.
+
+main reason of spark popularity is distributed processing.
+
+Data processing can happen on multiple nodes on spark cluster.
+spark also has its own cluster manager, or it can use MESOS cluster manager
+to work on the hadoop.
+
+spark on hadoop is popular architecture in the big data ecosystem, Hadoop solves 
+the porblem of distrinuted storage and spark does large scale data computation in
+s distribuyted manner.
+
+spark can wotr on hadoop, it can work with relational databases, no SQL databases,
+it can run on different cloud storage like AWS S3, Azure etc.
+it also run on simple file system.
+
+spark is an sopen source technology under Apache Foundation. it is a unified analytics
+engine for large-scale data processing.
+
+we can read a dataset using spark, do all kinds of filtering aggregation and then 
+create a new dataset which can b consume by other applications and with spark storing
+intermediate result in memory it could do parallel processing at a much faster 
+pace compared to MapReduce.
+
+spark core engine interacts with the cluster manager for individual programming spark
+has libararies like spark SQL or Spark dataframe for data transformation.
+
+spark SQL, Spark MLLib, GraphX Streaming         ---- Library      |
+    SPARK CORE                                   ---- Engine       |  SPARK 
+ YARN, Mesos, Spark Scheduler                    ---- Management   |FRAMEWORK
+ HDFS, Local, NoSQL                              ---- Storage      |  
+
+Spark written in Scala. For individual programming, it support Python, Java
+and Scala.
+
+Scala is the language of choice for big data and spark, if you have other application
+like machine learning written in pythioin and you to integrate those application with spark,
+then its better to user python spark or Pyspark for your computation work.
+
+spark works on drive program. all spark program are managed by driver program
+which run on master node. in a muliti-node cluster enviro. the driver program runs
+on th emaster node and it create several workers which run on the worker nodes or data
+nodes. the driver program creates a spark session which is the entry point
+to any spark application.
+
+with the help of spark session we can access to all spark libraries and functionalities.
+
+=====================================================================================================================================
+PYSPARK CODES:
+
+
+Code
+rt pyspark
+import pyspark
+---------------------------------------------------------------------------
+ModuleNotFoundError                       Traceback (most recent call last)
+Input In [1], in <cell line: 1>()
+----> 1 import pyspark
+
+ModuleNotFoundError: No module named 'pyspark'
+
+!pip install findspark
+Requirement already satisfied: findspark in c:\users\hp\anaconda3\lib\site-packages (2.0.1)
+Note: you may need to restart the kernel to use updated packages.
+import pyspark
+​
+​
+​
+---------------------------------------------------------------------------
+ModuleNotFoundError                       Traceback (most recent call last)
+Input In [3], in <cell line: 1>()
+----> 1 import pyspark
+
+ModuleNotFoundError: No module named 'pyspark'
+
+import findspark
+​
+import pyspark
+---------------------------------------------------------------------------
+ModuleNotFoundError                       Traceback (most recent call last)
+Input In [9], in <cell line: 1>()
+----> 1 import pyspark
+
+ModuleNotFoundError: No module named 'pyspark'
+
+import findspark
+findspark.init()
+​
+import pyspark
+import pyspark
+pyspark.sql import SparkSession
+from pyspark.sql import SparkSession
+spark = SparkSession.builder.getOrCreate()
+df = spark.sql("select 'spark' as hello ")
+df.show()
+spark = SparkSession.builder.getOrCreate()
+df = spark.sql("select 'spark' as hello ")
+df.show()
++-----+
+|hello|
++-----+
+|spark|
++-----+
+
+spark = SparkSession.builder.getOrCreate()
+df = spark.read.csv("spark.csv", header=True, inferSchema=True)
+df.show()
++---+----+---+
+| id|name|job|
++---+----+---+
+|  1|rina|s/w|
+|  2|nena|r/d|
+|  3| amy|i/t|
++---+----+---+
+
+df.printSchema()
+df.printSchema()
+root
+ |-- id: integer (nullable = true)
+ |-- name: string (nullable = true)
+ |-- job: string (nullable = true)
+
+df=spark.read.csv('spark.csv',header=True,inferSchema=True)
+df.show()
++---+----+---+
+| id|name|job|
++---+----+---+
+|  1|rina|s/w|
+|  2|nena|r/d|
+|  3| amy|i/t|
++---+----+---+
+
+df.printSchema()
+root
+ |-- id: integer (nullable = true)
+ |-- name: string (nullable = true)
+ |-- job: string (nullable = true)
+
+spark
+spark
+SparkSession - in-memory
+
+SparkContext
+
+Spark UI
+
+Version
+v3.2.1
+Master
+local[*]
+AppName
+pyspark-shell
+type(df)
+pyspark.sql.dataframe.DataFrame
+df.head(3)
+​
+[Row(id=1, name='rina', job='s/w'),
+ Row(id=2, name='nena', job='r/d'),
+ Row(id=3, name='amy', job='i/t')]
+df.show()
+df.show()
++---+----+---+
+| id|name|job|
++---+----+---+
+|  1|rina|s/w|
+|  2|nena|r/d|
+|  3| amy|i/t|
++---+----+---+
+
+df.select(['name','job']).show()
+df.select(['name','job']).show()
++----+
+|name|
++----+
+|rina|
+|nena|
+| amy|
++----+
+
+df.select(['name','job']).show()
+​
++----+---+
+|name|job|
++----+---+
+|rina|s/w|
+|nena|r/d|
+| amy|i/t|
++----+---+
+
+df['name']
+Column<'name'>
+
+df.dtypes
+df.dtypes
+[('id', 'int'), ('name', 'string'), ('job', 'string')]
+df.describe()
+df.describe()
+DataFrame[summary: string, id: string, name: string, job: string]
+df.describe().show()
++-------+---+----+----+
+|summary| id|name| job|
++-------+---+----+----+
+|  count|  3|   3|   3|
+|   mean|2.0|null|null|
+| stddev|1.0|null|null|
+|    min|  1| amy| i/t|
+|    max|  3|rina| s/w|
++-------+---+----+----+
+
+from pyspark.sql.functions 
+### adding cloumns in data frame
+from pyspark.sql.functions 
+df=df.withColumn("experience", lit(3))
+df.show()
++---+----+---+----------+
+| id|name|job|experience|
++---+----+---+----------+
+|  1|rina|s/w|         3|
+|  2|nena|r/d|         3|
+|  3| amy|i/t|         3|
++---+----+---+----------+
+
+df.show()
++---+----+---+----------+
+| id|name|job|experience|
++---+----+---+----------+
+|  1|rina|s/w|         3|
+|  2|nena|r/d|         3|
+|  3| amy|i/t|         3|
++---+----+---+----------+
+
+#import pyspark.sql.functions 
+df = df.select('')
+df.show
+---------------------------------------------------------------------------
+AnalysisException                         Traceback (most recent call last)
+Input In [78], in <cell line: 2>()
+      1 #import pyspark.sql.functions 
+----> 2 df = df.select('age')
+      3 df.show
+
+File C:\spark-3.2.1-bin-hadoop3.2\python\pyspark\sql\dataframe.py:1685, in DataFrame.select(self, *cols)
+   1664 def select(self, *cols):
+   1665     """Projects a set of expressions and returns a new :class:`DataFrame`.
+   1666 
+   1667     .. versionadded:: 1.3.0
+   (...)
+   1683     [Row(name='Alice', age=12), Row(name='Bob', age=15)]
+   1684     """
+-> 1685     jdf = self._jdf.select(self._jcols(*cols))
+   1686     return DataFrame(jdf, self.sql_ctx)
+
+File C:\spark-3.2.1-bin-hadoop3.2\python\lib\py4j-0.10.9.3-src.zip\py4j\java_gateway.py:1321, in JavaMember.__call__(self, *args)
+   1315 command = proto.CALL_COMMAND_NAME +\
+   1316     self.command_header +\
+   1317     args_command +\
+   1318     proto.END_COMMAND_PART
+   1320 answer = self.gateway_client.send_command(command)
+-> 1321 return_value = get_return_value(
+   1322     answer, self.gateway_client, self.target_id, self.name)
+   1324 for temp_arg in temp_args:
+   1325     temp_arg._detach()
+
+File C:\spark-3.2.1-bin-hadoop3.2\python\pyspark\sql\utils.py:117, in capture_sql_exception.<locals>.deco(*a, **kw)
+    113 converted = convert_exception(e.java_exception)
+    114 if not isinstance(converted, UnknownException):
+    115     # Hide where the exception came from that shows a non-Pythonic
+    116     # JVM exception message.
+--> 117     raise converted from None
+    118 else:
+    119     raise
+
+AnalysisException: cannot resolve 'age' given input columns: [experience, id, job, name];
+'Project ['age]
++- Project [id#99, name#100, job#101, 3 AS experience#770]
+   +- Project [id#99, name#100, job#101, 3 AS experience#725]
+      +- Relation [id#99,name#100,job#101] csv
+
+
+df.drop('experience').show()
++---+----+---+
+| id|name|job|
++---+----+---+
+|  1|rina|s/w|
+|  2|nena|r/d|
+|  3| amy|i/t|
++---+----+---+
+
+## rename the column
+df.withColumnRenamed('name','Name').show()
++---+----+---+----------+
+| id|Name|job|experience|
++---+----+---+----------+
+|  1|rina|s/w|         3|
+|  2|nena|r/d|         3|
+|  3| amy|i/t|         3|
++---+----+---+----------+
+
+
+df.filter('salary<=2000').show()
+df.filter('salary<=2000').select(['name','age']).show()
+df.groupBy.('name').sum()
+
+Validation with PySpark:
+printshema()   for the metadata validation
+groupBy.('colname').count()  for count validation
+df.groupBy("A").count().where("count > 1").drop("count").show()
+
+*************************************************
+For running sql query we should have the database but in pyspark there is no database
+we should convert that file(and this convert that file we can use for sql query)
+df.createOrReplaceTempView('file_name')
+spark.sql('select * from file_name)
